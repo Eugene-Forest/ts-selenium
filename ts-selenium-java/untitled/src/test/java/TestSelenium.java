@@ -20,11 +20,12 @@ public class TestSelenium {
     @BeforeEach
     public void setup() {
         //指定驱动路径
-        System.setProperty("webdriver.chrome.driver","E://Driver/chromedriver-win64/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","E://Driver/129/chromedriver-win64/chromedriver.exe");
         // 谷歌驱动
         ChromeOptions options = new ChromeOptions();
         // 允许所有请求
         options.addArguments("--remote-allow-origins=*");
+        options.setBinary("E://Driver/129/chrome-win64/chrome.exe");
 
         driver = new ChromeDriver(options);
     }
@@ -36,7 +37,7 @@ public class TestSelenium {
         // 启动需要打开的网页
         driver.get("https://cn.bing.com/");
         String title = driver.getTitle();
-        assertEquals("必应", title);
+        assertEquals("必s应", title);
 
 //        sb_form_q
 
